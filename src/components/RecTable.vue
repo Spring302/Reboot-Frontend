@@ -6,16 +6,16 @@
         <tr>
           <th>날짜</th>
           <th>아파트명</th>
-          <th>가격(최저가)</th>
-          <th>평단가</th>
+          <th>최저가[만원]</th>
+          <th>평단가[만원]</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(rec, index) in rec_list" :key="index">
-          <td>{{ rec.Date }}</td>
-          <td>{{ rec.Name }}</td>
-          <td>{{ rec.Price }}</td>
-          <td>{{ rec.PerPrice }}</td>
+          <td>{{ rec.date }}</td>
+          <td>{{ rec.apart.name }}</td>
+          <td>{{ rec.price }}</td>
+          <td>{{ rec.per_price }}</td>
         </tr>
       </tbody>
     </table>
@@ -30,13 +30,13 @@ export default {
   },
   data() {
     return {
-      rec_list: { Date: "2022-08-09", Name: "빛가람혁신도시중흥S-클래스센트럴1차", Price: "3억 5,000", PerPrice: 1220 },
+      rec_list: {},
     };
   },
   methods: {
     fetchData: function () {
       this.axios
-        .get("rec/shorts/" + this.slice + "/")
+        .get("apart/price/")
         .then((response) => {
           this.rec_list = response.data;
           console.log(response.data);
