@@ -1,5 +1,6 @@
 <template>
-  <footer class="footer mt-auto bg-gray">
+  <div>
+    <!-- <footer class="footer mt-auto bg-gray">
     <div class="container-fluid">
       <footer class="d-flex flex-wrap justify-content-between align-items-center my-4 border-top">
         <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
@@ -17,7 +18,8 @@
         </ul>
       </footer>
     </div>
-  </footer>
+  </footer> -->
+  </div>
 </template>
 
 <script>
