@@ -16,11 +16,6 @@ export default {
     HeaderLO,
     FooterLO,
   },
-  data() {
-    return {
-      user_token: {},
-    };
-  },
 };
 </script>
 

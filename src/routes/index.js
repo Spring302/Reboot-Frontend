@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainPage from "../components/MainPage.vue";
+// import MainPage from "../components/MainPage.vue";
 import RecPage from "../components/RecPage.vue";
 import LoginForm from "../components/LoginForm.vue";
 
 const routes = [
-  { path: "/", component: MainPage },
+  // { path: "/", component: MainPage },
+  { path: "/", redirect: "/rec" },
   { path: "/rec", component: RecPage },
   { path: "/login", component: LoginForm },
 ];

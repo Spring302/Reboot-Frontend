@@ -16,10 +16,10 @@
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button class="btn btn-outline-success" type="submit">Search</button>
+              <a class="nav-link" v-if="$store.state.username" href="#">{{ $store.state.username }}</a>
+              <a class="nav-link" v-if="!$store.state.username" href="/login">Login</a>
+              <a class="nav-link" v-else href="#" @click="logout">Logout</a>
             </form>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
           </li>
         </ul>
       </div>
@@ -40,6 +40,12 @@ export default {
         ["car", "차량시세비교"],
       ],
     };
+  },
+  methods: {
+    logout() {
+      this.$store.commit("logout");
+      alert("Logout 하였습니다.");
+    },
   },
 };
 </script>

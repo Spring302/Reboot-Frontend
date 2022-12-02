@@ -47,21 +47,21 @@ export default {
       confirmReg: "",
       emptyFields: false,
       user_token: {},
-      userId: "maple1",
-      userPassword: "reboot123",
+      username: "maple1",
+      password: "reboot123",
     };
   },
   methods: {
     loginSample() {
       this.axios
         .post("dj-rest-auth/login/", {
-          username: "maple1",
-          email: "test@reboot.com",
-          password: "reboot123",
+          username: this.username,
+          password: this.password,
         })
         .then((response) => {
           console.log(response.data);
           this.user_token = response.data;
+          this.$store.commit("setUsername", this.username);
           this.$router.push("/rec");
         })
         .catch((error) => {
@@ -72,9 +72,9 @@ export default {
     registerSample() {
       this.axios
         .post("dj-rest-auth/registration/", {
-          username: "maple1",
-          password1: "reboot123",
-          password2: "reboot123",
+          username: this.username,
+          password1: this.password,
+          password2: this.password,
           email: "test@reboot.com",
         })
         .then((response) => {
